@@ -33,7 +33,7 @@
         }
 
         public function __toString(){
-            return $this->descricao();
+            return $this->descricao;
         }
     }
 ?>
