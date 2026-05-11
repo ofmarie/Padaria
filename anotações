@@ -1,0 +1,16 @@
+ $cliente1 = new Cliente("Maria");
+
+    $categoria1 = new Categoria("Pães");
+    $categoria2 = new Categoria("Bolos");
+
+    $produto1 = new Produto("Pão Francês", 0.50, $categoria1);
+    $produto2 = new Produto("Bolo de Chocolate", 25.00, $categoria2);
+
+    $pedido1 = new Pedido(1, $cliente1);
+    $pedido1->adicionaProduto($produto1);
+    $pedido1->adicionaProduto($produto2);
+
+    $pedido1->listarPedido();
+
+
+     <input type="number" name="preco" placeholder="Preço" step="0.01" required>
