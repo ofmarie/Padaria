@@ -1,6 +1,6 @@
 <?php
     class Categoria {
-        private $descricao;
+        protected $descricao;
 
         public function __construct($descricao) {
             $this->descricao = $descricao;

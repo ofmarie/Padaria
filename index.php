@@ -1,8 +1,8 @@
 <?php
+    require "Categoria.php";
     require "Cliente.php";
     require "Produto.php";
     require "Pedido.php";
-    require "Categoria.php";
 
     $mensagem = ""; // variável para guardar o resultado
 
@@ -14,8 +14,7 @@
         $nomeCategoria = $_POST['categoria'];
 
         $cliente = new Cliente($nomeCliente);
-        $categoria = new Categoria($nomeCategoria);
-        $produto = new Produto($nomeProduto, $preco, $categoria);
+        $produto = new Produto($nomeProduto, $preco);
 
         $pedido = new Pedido($idPedido, $cliente);
         $pedido->adicionaProduto($produto);
