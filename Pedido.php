@@ -1,18 +1,21 @@
 <?php
     class Pedido {
         private $id;
+        private $data;
         private $quantidade;
         private $produtos;
         private $cliente;
 
-        public function __construct($id,$cliente){
+        public function __construct($id, $cliente) {
             $this->id = $id;
+            $this->data = date('Y-m-d');
             $this->cliente = $cliente;
             $this->quantidade = 0;
+            $this->produtos = [];
         }
 
         public function adicionaProduto($produto) {
-            $this->produtos = $produto;
+            $this->produtos[] = $produto;
             $this->quantidade++;
         }
 
@@ -22,6 +25,14 @@
 
         public function setId($id) {
             $this->id = $id;
+        }
+
+        public function getData() {
+            return $this->data;
+        }
+
+        public function setData($data) {
+            $this->data = $data;
         }
 
         public function getQuantidade() {

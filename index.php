@@ -1,8 +1,12 @@
 <?php
+    require "PadariaItem.php";
     require "Cliente.php";
     require "Produto.php";
     require "Pedido.php";
     require "Categoria.php";
+    require "Pagamento.php";
+    require "pagarDebito.php";
+    require "pagarPix.php";
 
     // Processa formulário POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -37,34 +41,46 @@
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #121212;
+            color: #fff;
         }
         form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #1e1e1e;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         input, button {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 14px 16px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 12px;
             font-size: 14px;
+            box-sizing: border-box;
+        }
+        input {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            outline: none;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
         }
         button {
             background-color: #c94b86;
             color: white;
             cursor: pointer;
-            border: none;
+            transition: background-color 0.25s ease;
         }
         button:hover {
-            background-color: #c94b86;
+            background-color: #b33f77;
         }
         h1 {
-            color: #333;
+            color: #fff;
             text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
